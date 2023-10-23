@@ -1,4 +1,3 @@
-from dotenv import load_dotenv
 import os
 import streamlit as st
 import pandas as pd
@@ -9,9 +8,8 @@ import matplotlib
 st.set_page_config(layout="wide", page_title="Chat-EDA")
 
 matplotlib.use('TkAgg')
-load_dotenv()
 
-API_KEY = os.environ['OPENAI_API_KEY']
+API_KEY = st.secrets['OPENAI_API_KEY']
 llm = OpenAI(api_token=API_KEY)
 
 with st.sidebar:

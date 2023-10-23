@@ -2038,3 +2038,54 @@ def analyze_data(dfs: list[pd.DataFrame]) ->dict:
         ```
 2023-10-23 21:08:52 [INFO] Answer: {'type': 'string', 'value': 'The most profitable product in 2016 is Canon imageCLASS 2200 Advanced Copier.'}
 2023-10-23 21:08:52 [INFO] Executed in: 0.01800823211669922s
+2023-10-23 21:14:35 [INFO] Question: what is the most profitable product in 2016
+2023-10-23 21:14:35 [INFO] Running PandasAI with openai LLM...
+2023-10-23 21:14:35 [INFO] Prompt ID: 243dfe99-be77-4c8b-86e5-f9c5fb72c291
+2023-10-23 21:14:35 [INFO] Using prompt: 
+You are provided with the following pandas DataFrames:
+
+<dataframe>
+Dataframe dfs[0], with 9994 rows and 21 columns.
+This is the metadata of the dataframe dfs[0]:
+row_id,order_id,order_date,ship_date,ship_mode,customer_id,customer_name,segment,country,city,state,postal_code,region,product_id,category,subcategory,product_name,sales,quantity,discount,profit
+1,CA-2016-152156,2016-11-08,2016-11-11,Second Class,CG-12520,Claire Gute,Consumer,United States,Henderson,Kentucky,42420,South,FUR-BO-10001798,Furniture,Bookcases,Bush Somerset Collecti...,261.96,2,0.0,41.9136
+4,US-2015-108966,2015-10-11,2015-10-18,Standard Class,SO-20335,Sean O'Donnell,Consumer,United States,Fort Lauderdale,Florida,33311,South,FUR-TA-10000577,Furniture,Tables,Bretford CR4500 Series...,957.5775,5,0.45,-383.031
+5,US-2015-108966,2015-10-11,2015-10-18,Standard Class,SO-20335,Sean O'Donnell,Consumer,United States,Fort Lauderdale,Florida,33311,South,OFF-ST-10000760,Office Supplies,Storage,Eldon Fold 'N Roll Car...,22.368,2,0.2,2.5164
+2,CA-2016-152156,2016-11-08,2016-11-11,Second Class,CG-12520,Claire Gute,Consumer,United States,Henderson,Kentucky,42420,South,FUR-CH-10000454,Furniture,Chairs,Hon Deluxe Fabric Upho...,731.94,3,0.0,219.582
+3,CA-2016-138688,2016-06-12,2016-06-16,Second Class,DV-13045,Darrin Van Huff,Corporate,United States,Los Angeles,California,90036,West,OFF-LA-10000240,Office Supplies,Labels,Self-Adhesive Address ...,14.62,2,0.0,6.8714
+</dataframe>
+
+<conversation>
+User 1: what is the most profitable product in 2016
+</conversation>
+
+This is the initial python code to be updated:
+```python
+# TODO import all the dependencies required
+import pandas as pd
+
+def analyze_data(dfs: list[pd.DataFrame]) -> dict:
+    """
+    Analyze the data
+    1. Prepare: Preprocessing and cleaning data if necessary
+    2. Process: Manipulating data for analysis (grouping, filtering, aggregating, etc.)
+    3. Analyze: Conducting the actual analysis (if the user asks to plot a chart save it to an image in temp_chart.png and do not show the chart.)
+    At the end, return a dictionary of:
+    - type (possible values "string", "number", "dataframe", "plot")
+    - value (can be a string, a dataframe or the path of the plot, NOT a dictionary)
+    Examples: 
+        { "type": "string", "value": "The highest salary is $9,000." }
+        or
+        { "type": "number", "value": 125 }
+        or
+        { "type": "dataframe", "value": pd.DataFrame({...}) }
+        or
+        { "type": "plot", "value": "temp_chart.png" }
+    """
+```
+
+Using the provided dataframes (`dfs`), update the python code based on the last question in the conversation.
+
+Updated code:
+
+2023-10-23 21:14:36 [INFO] error_code=invalid_api_key error_message='Incorrect API key provided: sk-pFEtO***************************************6C0Q. You can find your API key at https://platform.openai.com/account/api-keys.' error_param=None error_type=invalid_request_error message='OpenAI API error received' stream_error=False
